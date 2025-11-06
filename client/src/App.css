@@ -1,0 +1,300 @@
+/* ========= ROOT VARIABLES & SHARED STYLES ========= */
+
+:root {
+   /* 🌈 Color Palette */
+   --color-bg: #faf3e0;
+   --color-paper: #fffdf8;
+   --color-border: #e0d3b8;
+   --color-accent: #d4a373;
+   --color-accent-hover: #b97c53;
+   --color-text: #3c2f2f;
+   --color-subtext: #5c5045;
+   --color-muted: #8b7e6b;
+   --color-danger: #e76f51;
+   --color-danger-hover: #c9583d;
+
+   /* ✨ Shared Styles */
+   --radius: 10px;
+   --shadow: 0 2px 4px rgba(60, 47, 47, 0.1);
+   --shadow-hover: 0 4px 6px rgba(60, 47, 47, 0.15);
+   --transition: all 0.25s ease;
+}
+
+
+/* ======== LAYOUT CONTAINER (for tablet/desktop) ======== */
+
+.app-container {
+   width: 100%;
+   margin: 0 auto;
+}
+
+/* Center on tablet */
+/* @media (min-width: 600px) {
+  .app-container {
+    max-width: 700px;
+  }
+} */
+
+/* Center on desktop */
+@media (min-width: 900px) {
+   .app-container {
+      max-width: 900px;
+   }
+}
+
+
+/* ======= HOME PAGE ======= */
+
+.home header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem;
+   background: none;
+   border-bottom: 1px solid var(--color-border);
+}
+
+.home h1 {
+   color: var(--color-text);
+   font-family: 'Georgia', serif;
+}
+
+.new-note-btn {
+   background-color: var(--color-accent);
+   color: #fff;
+   padding: 0.6rem 1rem;
+   border-radius: 6px;
+   text-decoration: none;
+   font-weight: bold;
+   transition: var(--transition);
+}
+
+.new-note-btn:hover {
+   background-color: var(--color-accent-hover);
+}
+
+
+/* ======== NOTES GRID ======= */
+
+.notes-grid {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1rem;
+   padding: 1rem;
+}
+
+.note-card {
+   background: var(--color-paper);
+   border: 1px solid var(--color-border);
+   border-radius: var(--radius);
+   padding: 1rem;
+   box-shadow: var(--shadow);
+   transition: var(--transition);
+}
+
+.note-card:hover {
+   transform: translateY(-3px);
+   box-shadow: var(--shadow-hover);
+}
+
+.note-card h3 {
+   color: var(--color-text);
+   margin-bottom: 0.5rem;
+}
+
+.note-card p {
+   color: var(--color-subtext);
+   margin-bottom: 0.5rem;
+}
+
+.note-card small {
+   color: var(--color-muted);
+   font-size: 0.8rem;
+}
+
+
+/* ======== DETAIL & CREATE PAGES ======== */
+
+.note-detail,
+.create-note {
+   max-width: 600px;
+   margin: 2rem auto;
+   background: var(--color-paper);
+   border: 1px solid var(--color-border);
+   border-radius: var(--radius);
+   padding: 1.5rem;
+   box-shadow: var(--shadow);
+}
+
+.note-detail button,
+.create-note button {
+   background: none;
+   border: none;
+   color: var(--color-text);
+   cursor: pointer;
+   margin-bottom: 1rem;
+   font-size: 0.9rem;
+}
+
+.note-detail input,
+.note-detail textarea,
+.create-note input,
+.create-note textarea {
+   width: 100%;
+   background: var(--color-bg);
+   color: var(--color-text);
+   border: 1px solid var(--color-border);
+   border-radius: 6px;
+   padding: 0.75rem;
+   margin-top: 1rem;
+   font-family: inherit;
+}
+
+.note-detail textarea,
+.create-note textarea {
+   min-height: 150px;
+   resize: vertical;
+}
+
+.actions {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 1rem;
+}
+
+.save-btn,
+.create-btn {
+   background-color: var(--color-accent);
+   color: #fff;
+   border: none;
+   padding: 0.6rem 1rem;
+   border-radius: 6px;
+   font-weight: bold;
+   cursor: pointer;
+   transition: var(--transition);
+}
+
+.save-btn:hover,
+.create-btn:hover {
+   background-color: var(--color-accent-hover);
+}
+
+.delete-btn {
+   background-color: var(--color-danger);
+   color: #fff;
+   border: none;
+   padding: 0.6rem 1rem;
+   border-radius: 6px;
+   font-weight: bold;
+   cursor: pointer;
+   transition: var(--transition);
+}
+
+.delete-btn:hover {
+   background-color: var(--color-danger-hover);
+}
+
+
+/* ========== SEARCH BAR ======== */
+
+.searchbar {
+   display: flex;
+   justify-content: center;
+   padding: 1rem;
+}
+
+.searchbar input {
+   width: 100%;
+   max-width: 400px;
+   background: var(--color-paper);
+   color: var(--color-text);
+   border: 1px solid var(--color-border);
+   border-radius: var(--radius);
+   padding: 0.6rem 1rem;
+   font-size: 1rem;
+   box-shadow: var(--shadow);
+   transition: var(--transition);
+}
+
+.searchbar input:focus {
+   outline: none;
+   border-color: var(--color-accent);
+   box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
+}
+
+
+/* ======== NOTE CARD ENHANCEMENTS ======== */
+
+.note-card {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   position: relative;
+   padding-bottom: 2.5rem; /* space for edit button */
+}
+
+.note-content h3 {
+   margin-bottom: 0.2rem;
+   font-family: 'Georgia', serif;
+}
+
+.note-date {
+   display: block;
+   color: var(--color-muted);
+   margin-bottom: 0.5rem;
+   font-size: 0.85rem;
+}
+
+.card-actions {
+   position: absolute;
+   right: 1rem;
+   bottom: 1rem;
+}
+
+.edit-btn {
+   background-color: var(--color-accent);
+   color: #fff;
+   padding: 0.4rem 0.8rem;
+   border-radius: 6px;
+   font-size: 0.85rem;
+   font-weight: 600;
+   text-decoration: none;
+   transition: var(--transition);
+}
+
+.edit-btn:hover {
+   background-color: var(--color-accent-hover);
+}
+
+/* Empty state */
+.no-notes {
+   text-align: center;
+   color: var(--color-muted);
+   padding: 2rem;
+}
+
+
+/* ========= LOAD SPINNER ========= */
+
+.spinner-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 200px;
+}
+
+.spinner {
+   width: 40px;
+   height: 40px;
+   border: 4px solid #ccc;
+   border-top-color: #333;
+   border-radius: 50%;
+   animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+   to {
+      transform: rotate(360deg);
+   }
+}
+

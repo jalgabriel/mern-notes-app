@@ -1,0 +1,28 @@
+# Node modules (both backend and frontend)
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment variables (never commit secrets)
+*.env
+*.env.local
+client/.env
+server/.env
+
+# Production build output
+dist/
+client/dist/
+server/dist/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
