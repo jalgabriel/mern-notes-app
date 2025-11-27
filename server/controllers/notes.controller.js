@@ -1,4 +1,4 @@
-const Note = require("../models/Note");
+const Note = require("../models/Note.model.js");
 
 // GET /api/notes - get all notes
 const getAllNotes = async (req, res) => {
