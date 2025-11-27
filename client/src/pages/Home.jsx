@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import NoteCard from "../components/NotesCard.jsx";
@@ -37,9 +37,9 @@ export default function Home() {
       <div className="home">
          <header>
             <h1>Notes</h1>
-            <Link to="/create" className="new-note-btn">
+            {/* <Link to="/create" className="new-note-btn">
                + New Note
-            </Link>
+            </Link> */}
          </header>
 
          <SearchBar onSearch={handleSearch} />

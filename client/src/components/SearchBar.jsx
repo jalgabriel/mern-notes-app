@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function SearchBar({ onSearch }) {
@@ -17,6 +18,10 @@ export default function SearchBar({ onSearch }) {
          value={query}
          onChange={handleChange}
          />
+
+         <Link to="/create" className="new-note-btn">
+            + New Note
+         </Link>
       </div>
    );
 }
