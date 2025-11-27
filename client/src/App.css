@@ -11,7 +11,7 @@
    --color-subtext: #5c5045;
    --color-muted: #8b7e6b;
    --color-danger: #e76f51;
-   --color-danger-hover: #c9583d;
+   --color-danger-hover: #f0380a;
 
    /* ✨ Shared Styles */
    --radius: 10px;
@@ -191,7 +191,8 @@
 }
 
 .delete-btn:hover {
-   background-color: var(--color-danger-hover);
+   background: var(--color-danger-hover);
+   color: var(--color-subtext);
 }
 
 
@@ -263,7 +264,7 @@
 }
 
 .edit-btn:hover {
-   background-color: var(--color-accent-hover);
+   background: var(--color-accent-hover);
 }
 
 /* Empty state */

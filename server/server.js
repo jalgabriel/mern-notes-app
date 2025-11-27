@@ -21,7 +21,7 @@ app.use(cors({
 }));
 
 // ROUTES
-app.use("/api/notes", require("./routes/notes"));
+app.use("/api/notes", require("./routes/notes.route"));
 
 // (Optional) Test route
 app.get("/api", (req, res) => res.send("Notes API is running"));
