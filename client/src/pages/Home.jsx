@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+// import Navbar from "../components/Navbar.jsx";
 import NoteCard from "../components/NotesCard.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 import { getNotes } from "../services/api.js";
@@ -10,13 +11,27 @@ export default function Home() {
    const [filtered, setFiltered] = useState([]);
    const [loading, setLoading] = useState(true);
 
+   // useEffect(() => {
+   //    getNotes()
+   //       .then(data => {
+   //          setNotes(data);
+   //          setFiltered(data);
+   //       })
+   //       .finally(() => setLoading(false)); // hide spinner when done
+   // }, []);
+
    useEffect(() => {
+      setLoading(true);
       getNotes()
-         .then(data => {
+         .then((data) => {
             setNotes(data);
             setFiltered(data);
          })
-         .finally(() => setLoading(false)); // hide spinner when done
+         .catch((err) => {
+            console.error("Failed to load notes:", err);
+            // optional: if err.status === 401 redirect to /login
+         })
+         .finally(() => setLoading(false));
    }, []);
 
    const handleSearch = (query) => {
@@ -35,12 +50,13 @@ export default function Home() {
 
    return (
       <div className="home">
-         <header>
+         {/* <header>
             <h1>Notes</h1>
-            {/* <Link to="/create" className="new-note-btn">
+
+            <Link to="/create" className="new-note-btn">
                + New Note
-            </Link> */}
-         </header>
+            </Link>
+         </header> */}
 
          <SearchBar onSearch={handleSearch} />
 
